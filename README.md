@@ -7,6 +7,8 @@ Asir用のVSCodeで使える拡張機能です。
 - 定義ジャンプ
 - コード補完
 
+## 使い方
+Extension → Install from VSIX を選択し、vsixファイルを選んでください。
 ## 参考文献
 [Extension API | Visual Studio Code Extension API](https://code.visualstudio.com/api)  
 [Official page for Language Server Protocol](https://microsoft.github.io/language-server-protocol/)  
