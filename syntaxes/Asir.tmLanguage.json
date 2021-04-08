@@ -1,0 +1,86 @@
+{
+ "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+ "name": "Asir", 
+ "scopeName": "source.Asir",
+ "patterns": [
+  {
+   "include": "#keywords"
+  },
+  {
+   "include": "#comments"
+  },
+  {
+   "include": "#constant"
+  },
+  {
+   "include": "#entity"
+  }
+ ],
+ "repository": {
+  "keywords": {
+   "patterns": [
+    {
+     "name": "keyword.control",
+     "match": "\\b(def|return|if|else|for|while|break|continue|true|false|end)\\b"
+    },
+    {
+     "name": "variable",
+     "match": "[A-Z]"
+    }
+   ]
+  },
+  "comments": {
+   "patterns": [
+    {
+     "name": "comment.block",
+     "begin": "\/\\*",
+     "end": "\\*\/",
+     "patterns": [
+      {
+       "name": "comment.block.documentation"
+      }
+     ]
+    },
+    {
+     "name": "comment.line",
+     "begin": "\/\/",
+     "end": "\\n",
+     "patterns": [
+      {
+       "name": "comment.line.double-slash"
+      }
+     ]
+    }
+   ]
+  },
+  "constant": {
+   "patterns": [
+    {
+     "name": "constant.numeric",
+     "match": "[0-9]"
+    }
+   ]
+  },
+  "entity": {
+   "patterns": [
+    {
+     "name": "entity.name",
+     "match": "(\\w+)\\(",
+     "captures": {
+      "1": {"patterns": [{"include": "#function_name"}]}
+     }
+    }
+   ],
+   "repository": {
+    "function_name": {
+     "patterns": [
+      {
+       "name": "entity.name.function",
+       "match": "\\w+"
+      }
+     ]
+    }
+   }
+  }
+ }
+}
